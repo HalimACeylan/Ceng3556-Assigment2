@@ -28,12 +28,12 @@ async def main():
 
 
 ## Server Side
-In the server-side code snippet, you have defined a handler function that handles SNMP requests. Some of the variables used in the function are in use, while others are not. Here's an explanation of the variables in the handler function:
+In the server-side code snippet, I have defined a handler function that handles SNMP requests. Some of the variables used in the function are in use, while others are not. Here's an explanation of the variables in the handler function:
 ```python 
 async def handler(req: snmp_agent.SNMPRequest) -> snmp_agent.SNMPResponse:
     vbs = [
         snmp_agent.VariableBinding(
-            '1.3.6.1.2.1.1.1', snmp_agent.OctetString('System')), #
+            '1.3.6.1.2.1.1.1', snmp_agent.OctetString('System')),
         snmp_agent.VariableBinding(
             '1.3.6.1.2.1.1.3', snmp_agent.TimeTicks(100)), 
         snmp_agent.VariableBinding(
@@ -51,7 +51,7 @@ async def handler(req: snmp_agent.SNMPRequest) -> snmp_agent.SNMPResponse:
         snmp_agent.VariableBinding(
             '1.3.6.1.2.1.31.1.1.1.10.1', snmp_agent.Counter64(1000)), # not in use
         snmp_agent.VariableBinding(
-        '1.3.6.1.2.1.4.20.1.1.10.0.0.1', snmp_agent.Integer(1)), # not in use
+        '1.3.6.1.2.1.4.20.1.1.10.0.0.1', snmp_agent.Integer(1)),
         snmp_agent.VariableBinding(
             '1.3.6.1.2.1.4.20.1.1.10.0.0.2', snmp_agent.Integer(2)),
         snmp_agent.VariableBinding(
