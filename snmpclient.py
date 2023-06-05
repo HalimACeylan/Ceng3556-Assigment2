@@ -121,7 +121,7 @@ resource = Resource.find_all()
 result = tuple(system) + tuple(resource)
 
 while True:
-    time.sleep(5)
+    time.sleep(60)
     send_request()
 
 
