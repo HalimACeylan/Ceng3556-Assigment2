@@ -22,17 +22,17 @@ async def handler(req: snmp_agent.SNMPRequest) -> snmp_agent.SNMPResponse:
         snmp_agent.VariableBinding(
             '1.3.6.1.2.1.31.1.1.1.10.1', snmp_agent.Counter64(1000)),
         snmp_agent.VariableBinding(
-        '1.3.6.1.2.1.4.20.1.1.10.0.0.1', snmp_agent.Integer(1)),
+        '1.3.6.1.2.1.25.2.1.1', snmp_agent.Integer(1)),
         snmp_agent.VariableBinding(
-            '1.3.6.1.2.1.4.20.1.1.10.0.0.2', snmp_agent.Integer(2)),
+            '1.3.6.1.2.1.25.2.1.2', snmp_agent.Integer(2)),
         snmp_agent.VariableBinding(
-            '1.3.6.1.2.1.4.20.1.1.10.0.0.3', snmp_agent.Integer(3)),
+            '1.3.6.1.2.1.25.2.1.3', snmp_agent.Integer(3)),
         snmp_agent.VariableBinding(
-            '1.3.6.1.2.1.4.20.1.1.10.0.0.4', snmp_agent.Integer(4)),
+            '1.3.6.1.2.1.25.2.1.4', snmp_agent.Integer(4)),
         snmp_agent.VariableBinding(
-            '1.3.6.1.2.1.4.20.1.1.10.0.0.7', snmp_agent.Integer(7)),
+            '1.3.6.1.2.1.25.2.1.7', snmp_agent.Integer(7)),
         snmp_agent.VariableBinding(
-            '1.3.6.1.2.1.4.20.1.1.10.0.0.8', snmp_agent.Integer(8))
+            '1.3.6.1.2.1.25.2.1.8', snmp_agent.Integer(8))
 
         
     ]

@@ -53,7 +53,7 @@ class Resource(BaseModel):
     hrStorageRamDisk = SnmpMib(oid='8')
 
     class Meta:
-        PREFIX = '1.3.6.1.2.1.4.20.1.1.10.0.0'
+        PREFIX = '1.3.6.1.2.1.25.2.1'
 
     @classmethod
     def test(cls):
@@ -70,7 +70,7 @@ class Resource(BaseModel):
     def find_all(cls):
         snmp = snmp_session()
         data = snmp.walk(cls.Meta.PREFIX)
-        iso_prefix = 'iso.3.6.1.2.1.4.20.1.1.10.0.0'
+        iso_prefix = 'iso.3.6.1.2.1.25.2.1'
         fields = cls.__fields__
         resource_object = Resource()
         for d in data:
@@ -86,14 +86,6 @@ system = System.find_all_system()
 resource = Resource.find_all()
 result = tuple(system) + tuple(resource)
 
-# with open("data.csv", "w") as stream:
-#     writer = csv.writer(stream)
-#     for row in result:
-#         writer.writerow(row)
-
-
-
-
 def send_request():
         try:
             #get data
@@ -108,20 +100,20 @@ def send_request():
             writer = csv.writer(stream)
             for row in result:
                 writer.writerow(row)
-    
+        
 
 # create file
 with open("data.csv", "a") as stream:
     writer = csv.writer(stream)
     for row in result:
         writer.writerow(row)
- #send first request  for create 
+#send first request  for create 
 system = System.find_all_system()
 resource = Resource.find_all()
 result = tuple(system) + tuple(resource)
 
 while True:
-    time.sleep(60)
+    time.sleep(5)
     send_request()
 
 
